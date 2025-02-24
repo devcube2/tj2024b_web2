@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+제목 : <input type="text" class="title"> <br/>
+내용 : <input type="text" class="content"> <br/>
+<button onclick="onSave()">등록</button>
+
+<table>
+  <thead>
+  <tr>
+    <th>번호</th>
+    <th>제목</th>
+    <th>내용</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  </tbody>
+</table>
+
+<br>
+상세보기
+<br>
+제목: <span id="view-title"></span>&nbsp;&nbsp;&nbsp;
+내용: <span id="view-content"></span>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

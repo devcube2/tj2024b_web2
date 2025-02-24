@@ -8,15 +8,19 @@
     <insert id="write" parameterType="example.day03.mvc2_work.model.dto.BoardDto">
         insert into board(title, content) values( #{title}, #{content} )
     </insert>
-    <select id="list" resultType="example.day03.mvc2_work.model.dto.BoardDto">
-        select * from board
-    </select>
+
+<!--    <select id="list" resultType="example.day03.mvc2_work.model.dto.BoardDto">-->
+<!--        select * from board-->
+<!--    </select>-->
+
     <select id="view" parameterType="int" resultType="example.day03.mvc2_work.model.dto.BoardDto">
         select * from board where bno = #{bno}
     </select>
+
     <update id="update" parameterType="example.day03.mvc2_work.model.dto.BoardDto">
         update board set title = #{title} , content = #{content} where bno = #{bno}
     </update>
+
     <delete id="delete" parameterType="int">
         delete from board where bno = #{bno}
     </delete>
