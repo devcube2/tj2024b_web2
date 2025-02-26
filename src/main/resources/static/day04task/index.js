@@ -49,7 +49,7 @@ onFindAll(); // 전제조회 함수 실행
 
 const onView = async (bno) => {
     console.log(`onView... ${bno}`);
-    try{
+    try {
         const titleElement = document.querySelector('#view-title');
         const contentElement = document.querySelector('#view-content')
 
@@ -58,7 +58,7 @@ const onView = async (bno) => {
 
         titleElement.innerHTML = `${response.data.title}`;
         contentElement.innerHTML = `${response.data.content}`;
-    }catch( e ){ console.log( e ); }
+    } catch( e ){ console.log( e ); }
 }
 
 // [1] 등록 함수
