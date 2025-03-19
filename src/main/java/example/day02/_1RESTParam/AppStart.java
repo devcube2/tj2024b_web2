@@ -1,5 +1,4 @@
-package example.day02._1RESTParam;
-
+package example.day02._1RESTparam;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,6 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class AppStart {
     public static void main(String[] args) {
-        SpringApplication.run(AppStart.class);
+        SpringApplication.run( AppStart.class);
     }
 }
