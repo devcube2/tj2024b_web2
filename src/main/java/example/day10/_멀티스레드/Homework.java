@@ -84,8 +84,12 @@ public class Homework {
                     thread2 = null;
                 }
             } else if (ch == 0) {
-                thread1.exit = true;
-                thread2.exit = true;
+                if (thread1 != null) {
+                    thread1.exit = true;
+                }
+                if (thread2 != null) {
+                    thread2.exit = true;
+                }
                 break;
             }
         }
