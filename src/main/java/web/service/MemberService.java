@@ -1,6 +1,7 @@
 package web.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,6 +29,16 @@ public class MemberService {
                 // (3) 업로드된 파일명을 dto 저장
                 memberDto.setMimg(filename);
             }
+
+            // (4) 비크립트 라이브러리 이용한 비밀번호 암호화하기.
+            // 1. 비크립트 객체 생성
+            BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+            // 2. 암호화할 자료에 .encode(암호화할자료);
+            String hashedPassword = bCryptPasswordEncoder.encode(memberDto.getMpwd());
+            System.out.println("hashedPassword = " + hashedPassword);
+            // 3. 암호화된 값을 dto에 넣어서 db처리
+            memberDto.setMpwd(hashedPassword);
+
             boolean result = memberMapper.sigunUp(memberDto);
             System.out.println("result = " + result);
             return result;
