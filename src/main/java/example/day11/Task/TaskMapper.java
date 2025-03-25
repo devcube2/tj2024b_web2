@@ -17,6 +17,6 @@ public interface TaskMapper {
     @Select("select * from day11products")
     List<Map<String, Object>> task2();
 
-    @Update("UPDATE day11products SET stock_quantity = stock_quantity + 20")
+    @Update("UPDATE day11products SET stock_quantity = stock_quantity + 20 WHERE stock_quantity < 10")
     int task3();
 }
